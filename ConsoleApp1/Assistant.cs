@@ -17,7 +17,7 @@ namespace Lab_Work_6
     }
 
 
-    public class Assistant: Fridge
+    public class Assistant
     {
         Fridge fr = new Fridge();
 
@@ -50,8 +50,8 @@ namespace Lab_Work_6
                     case '4': fr.ListReceipt(); break;
                     case '5': fr.ReportAll(); break;
                     case '6': fr.ReportBreackAll(); break;
-                    case '7': comp = new Compressor();  comp.ChangeTemperature(); comp.ReportComponent(); break;
-                    case '8': condes = new Condenser(); condes.ChangePreassure(); condes.ReportComponent(); break;  
+                    case '7': Compressor comp = new Compressor();  comp.ChangeTemperature(); comp.ReportComponent(); break;
+                    case '8': Condenser condes = new Condenser(); condes.ChangePreassure(); condes.ReportComponent(); break;  
                     default: Console.WriteLine("The wrong command"); break;
                 }
                 Console.WriteLine("\n Continue y/n");

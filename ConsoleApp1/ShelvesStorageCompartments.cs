@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_Work_6
 {
-    public class ShelvesStorageCompartments: Fridge
+    public class ShelvesStorageCompartments: BaseComponent
     {
         //Ці компоненти забезпечують організацію та простір для зберігання всередині холодильника.
         //Полиці дозволяють розділяти та розташовувати харчові продукти,

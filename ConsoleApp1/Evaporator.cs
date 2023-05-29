@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_Work_6
 {
-    public class Evaporator : Fridge
+    public class Evaporator : BaseComponent
     {
         //Випарник розташований всередині холодильника і відповідає за поглинання тепла з внутрішньої камери.
         //Холодоагент низького тиску та низької температури надходить у випарник, спричиняючи охолодження навколишнього повітря.
