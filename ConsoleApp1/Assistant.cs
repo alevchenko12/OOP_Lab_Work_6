@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Lab_Work_6
 {
@@ -11,15 +12,47 @@ namespace Lab_Work_6
     {
         static void Main(string[] args)
         {
-            Assistant asist = new Assistant();
-            asist.Work();
+            Application.Run(new Assistant());
         }
     }
 
 
-    public class Assistant
+    public class Assistant : System.Windows.Forms.Form
     {
         Fridge fr = new Fridge();
+        ListView list = new ListView();
+
+        public Assistant() {
+            InitListHeader();
+            AddFakeItems();
+            list.Bounds = new Rectangle(new Point(10,10), new Size(300,200));
+            list.View = View.Details;
+            list.LabelEdit = true;
+            this.Controls.Add(list);
+        }
+
+        private void InitListHeader() {
+            ColumnHeader header = null;
+            header = new ColumnHeader();
+			header.Text = "Name";
+			list.Columns.Add(header);
+            header = new ColumnHeader();
+			header.Text = "Expire";
+			list.Columns.Add(header);
+        }
+
+        private void AddFakeItems() {
+			ListViewItem item = null;
+            item = new ListViewItem("Beer");
+			item.SubItems.Add("13 days");
+			list.Items.Add(item);
+            item = new ListViewItem("Wine");
+			item.SubItems.Add("3 days");
+			list.Items.Add(item);
+            item = new ListViewItem("Cream");
+			item.SubItems.Add("33 days");
+			list.Items.Add(item);
+        }
 
         public void Work()
         {
