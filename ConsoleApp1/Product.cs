@@ -38,6 +38,19 @@ namespace Lab_Work_6
 
         public category productCategory;
 
+        public static String StringFromCategory(category cat) {
+            switch(cat) {
+                case category.Fruit: return "Фрукт";
+                case category.Vegetable: return "Овочі";
+                case category.Meat: return "М'ясо";
+                case category.Dairy: return "Молочне";
+                case category.Fish: return "Рибка";
+                case category.Eggs: return "Яйця";
+                case category.Sweets: return "Солодощі";
+            }
+            return "Невідомо";
+        }
+
         //категорія 
         public enum category
         {
