@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.ExceptionServices;
@@ -37,14 +38,15 @@ namespace Lab_Work_6
             volume = v;
             capacity= c;
             products = new Dictionary<string, Product>();
+            comp = new Compressor();
+            condes = new Condenser();
+            evap = new Evaporator();
+            expanvalue = new ExpansionValve();
+            storage = new ShelvesStorageCompartments();
+            thermo = new Thermostat();
         }
 
-        public Fridge()
-        {
-            volume = 20000;
-            capacity = 50;
-            products = new Dictionary<string, Product>();
-        }
+        public Fridge() : this(20000, 50) { }
 
         /// <summary>
         /// зчитує файл зі списком продуктів
@@ -285,57 +287,25 @@ namespace Lab_Work_6
         }
 
         /// <summary>
-        /// віртуальний метод для написання звіту про роботу
-        /// </summary>
-        /// <returns></returns>
-        public virtual string ReportComponent()
-        {
-            string info = "No info";
-            return info;
-        }
-        
-        /// <summary>
-        /// віртуальний метод для написання звіту про поломку
-        /// </summary>
-        /// <returns></returns>
-        public virtual string ReportBreackdown()
-        {
-            string info = "No info about breackdown. Call service center for additional info.";
-            return info;
-        }
-
-        /// <summary>
         /// звістність по усім компонентам
         /// </summary>
         public void ReportAll()
         {
-            comp = new Compressor();
             Console.WriteLine(comp.ReportComponent());
-            condes = new Condenser();
             Console.WriteLine(condes.ReportComponent());
-            evap = new Evaporator();
             Console.WriteLine(evap.ReportComponent());
-            expanvalue = new ExpansionValve();
             Console.WriteLine(expanvalue.ReportComponent());
-            storage = new ShelvesStorageCompartments();
             Console.WriteLine(storage.ReportComponent());
-            thermo = new Thermostat();
             Console.WriteLine(thermo.ReportComponent());
         }
 
         public void ReportBreackAll()
         {
-            comp = new Compressor();
             Console.WriteLine(comp.ReportBreackdown());
-            condes = new Condenser();
             Console.WriteLine(condes.ReportBreackdown());
-            evap = new Evaporator();
             Console.WriteLine(evap.ReportBreackdown());
-            expanvalue = new ExpansionValve();
             Console.WriteLine(expanvalue.ReportBreackdown());
-            storage = new ShelvesStorageCompartments();
             Console.WriteLine(storage.ReportBreackdown());
-            thermo = new Thermostat();
             Console.WriteLine(thermo.ReportBreackdown());
         }
     }

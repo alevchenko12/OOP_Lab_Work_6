@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_Work_6
 {
-    public class Thermostat : Fridge
+    public class Thermostat : BaseComponent
     {
         //Термостат - це термочутливий пристрій, який контролює та регулює температуру всередині холодильника.
         //Він керує роботою компресора, сигналізуючи про ввімкнення або вимкнення для підтримки бажаного налаштування температури.

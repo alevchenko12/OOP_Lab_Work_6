@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Lab_Work_6
 {
@@ -11,16 +12,13 @@ namespace Lab_Work_6
     {
         static void Main(string[] args)
         {
-            Assistant asist = new Assistant();
-            asist.Work();
+            Application.Run(new ScreenApp());
         }
     }
 
-
-    public class Assistant: Fridge
+    public class Assistant
     {
         Fridge fr = new Fridge();
-
         public void Work()
         {
             Console.WriteLine("Smart Fridge");
@@ -50,8 +48,8 @@ namespace Lab_Work_6
                     case '4': fr.ListReceipt(); break;
                     case '5': fr.ReportAll(); break;
                     case '6': fr.ReportBreackAll(); break;
-                    case '7': comp = new Compressor();  comp.ChangeTemperature(); comp.ReportComponent(); break;
-                    case '8': condes = new Condenser(); condes.ChangePreassure(); condes.ReportComponent(); break;  
+                    case '7': Compressor comp = new Compressor();  comp.ChangeTemperature(); comp.ReportComponent(); break;
+                    case '8': Condenser condes = new Condenser(); condes.ChangePreassure(); condes.ReportComponent(); break;  
                     default: Console.WriteLine("The wrong command"); break;
                 }
                 Console.WriteLine("\n Continue y/n");

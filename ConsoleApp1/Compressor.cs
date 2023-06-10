@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab_Work_6
 {
-    public  class Compressor : Fridge
+    public  class Compressor : BaseComponent
     {
         //Компресор відповідає за стиснення та циркуляцію холодоагенту в системі охолодження холодильника.
         //Він підвищує тиск і температуру холодоагенту, дозволяючи йому виділяти тепло під час проходження через конденсатор.

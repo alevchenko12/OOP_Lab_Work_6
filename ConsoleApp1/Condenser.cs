@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab_Work_6
 {
-    public class Condenser : Fridge
+    public class Condenser : BaseComponent
     {
         //Конденсатор — це теплообмінний компонент, який допомагає відводити тепло від холодоагенту.
         //Він охолоджує холодоагент під високим тиском і високою температурою, передаючи тепло навколишньому повітрю або воді.

@@ -1,0 +1,3 @@
+List of Products:
+Name	Amount	DateExpire	Energy	Fat	Protein	Carbohydrates	Categories
+Pywko	2	0	30	200	0	0	6
